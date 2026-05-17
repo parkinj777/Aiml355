@@ -86,7 +86,7 @@ git push                              # Cloudflare auto-builds
 - `serve` (the local preview tool) emits a 301 → clean URL for `.html` paths. Cloudflare does the same with a 307. Internal links use `.html` extensions, so there's always one redirect hop. Could be cleaned up by emitting clean URLs from the build, or by writing internal links without `.html`.
 - The build copies `images/` into `dist/images/` whole. If `images/` grows large, this is wasteful — could symlink or just serve `images/` directly if a future refactor merits it.
 - `build.js` does not generate a sitemap, RSS feed, or `robots.txt`.
-- No 404 page (Cloudflare serves its default).
+- `dist/404.html` generated at build time; Cloudflare Pages serves it automatically for missing paths.
 - `SITE_TITLE` is hardcoded near the top of `build.js`; a config file would be cleaner if more knobs accumulate.
 
 ## Useful commands
@@ -109,7 +109,7 @@ curl -sIL https://aiml355.blogga.workers.dev/
 
 See the in-conversation list. Headline tiers:
 
-1. **Trivial** (~15–30 min each): site config object, 404 page, favicon, robots.txt, author byline, dark mode via `prefers-color-scheme`.
+1. **Trivial** (~15–30 min each): site config object, ~~404 page~~, favicon, robots.txt, author byline, dark mode via `prefers-color-scheme`.
 2. **Small** (~30–60 min each): RSS/Atom feed, sitemap.xml, drafts flag, reading time, OG/Twitter meta, prev/next post links, footer links.
 3. **Medium** (~1–3 hours each): tag index pages, author pages, pagination, syntax highlighting (shiki, build-time), figure/caption support, custom domain.
 4. **Larger / breaks the no-JS rule**: static search (Pagefind), comments, newsletter, i18n.
