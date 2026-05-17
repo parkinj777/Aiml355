@@ -166,6 +166,17 @@ async function build() {
   });
   await fs.writeFile(path.join(DIST_DIR, 'index.html'), indexPage);
 
+  const notFoundBody = renderTemplate(await loadTemplate('404.html'), { root_path: '' });
+  const notFoundPage = renderTemplate(baseTpl, {
+    title: `Page not found — ${escapeHtml(SITE_TITLE)}`,
+    description_meta: '',
+    css_path: '',
+    root_path: '',
+    site_title: escapeHtml(SITE_TITLE),
+    content: notFoundBody,
+  });
+  await fs.writeFile(path.join(DIST_DIR, '404.html'), notFoundPage);
+
   console.log(`Built ${posts.length} post(s) → ${path.relative(ROOT, DIST_DIR)}/`);
 }
 
