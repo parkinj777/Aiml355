@@ -5,19 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{title}}</title>
 {{description_meta}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{css_path}}style.css">
 </head>
 <body>
-<header>
-<h1><a href="{{root_path}}index.html">{{site_title}}</a></h1>
-</header>
-<hr>
+<div class="wrap">
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="dot"></span>
+    <span>Issue №{{issue}}</span>
+    <span class="sep">·</span>
+    <span>{{site_title}} / a working log</span>
+  </div>
+  <nav class="topbar-right">
+    <a href="{{root_path}}index.html">Index</a>
+    <a href="{{root_path}}index.html#archive">Archive</a>
+    <a href="{{root_path}}index.html#colophon">Colophon</a>
+  </nav>
+</div>
+
 <main>
 {{content}}
 </main>
-<hr>
-<footer>
-<p><a href="{{root_path}}index.html">home</a></p>
+
+<footer class="site-footer">
+  <div class="foot-cta">
+    <h3>Get the next one, <em>quietly</em>.</h3>
+    <p>Roughly one note when there's something worth sending. No streaks, no funnel, unsubscribe in one click.</p>
+    <form class="sub" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('input').placeholder='Thanks — see you in your inbox.';">
+      <input type="email" placeholder="you@somewhere.net" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="foot-col">
+    <h4>Elsewhere</h4>
+    <ul>
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">Bluesky</a></li>
+      <li><a href="#">Email</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Index</h4>
+    <ul>
+      <li><a href="{{root_path}}index.html">All posts</a></li>
+      <li><a href="{{root_path}}index.html#now">Now</a></li>
+      <li><a href="{{root_path}}index.html#colophon">Colophon</a></li>
+    </ul>
+  </div>
 </footer>
+
+<div class="colophon" id="colophon">
+  <span>© {{year}} {{site_title}}. Set in Instrument Serif &amp; JetBrains Mono.</span>
+  <span>Made by hand, mostly at night.</span>
+</div>
+
+</div>
 </body>
 </html>

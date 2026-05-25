@@ -1,4 +1,27 @@
-<h2>Posts</h2>
-<ul class="post-list">
-{{post_list}}
-</ul>
+<header class="masthead">
+  <h1 class="mast-name">{{mast_name_main}}<em>{{mast_name_tail}}</em></h1>
+  <div class="mast-meta">
+    <div class="mast-row"><span>Editor</span><span>One human, mostly</span></div>
+    <div class="mast-row"><span>Established</span><span>{{established}}</span></div>
+    <div class="mast-row"><span>Cadence</span><span>When useful, not often</span></div>
+    <div class="mast-row"><span>Subjects</span><span>Models, mistakes, margins</span></div>
+    <p class="mast-tag">A quiet journal about <span class="accent">learning in public</span>, half-formed ideas, and things I keep getting wrong.</p>
+  </div>
+</header>
+
+<section class="now" id="now">
+  <div class="now-head">
+    <span class="now-badge">Now</span>
+    <span class="now-date">Updated {{updated_display}}</span>
+  </div>
+  <p class="now-text">Currently <mark>writing the next entry</mark> — sketches and intermediate plots will land here first.</p>
+</section>
+
+<div class="filter-bar" id="archive">
+  <h2 class="filter-title">Posts<span class="count">{{post_count_padded}}</span></h2>
+  <div class="filter-meta">All entries · newest first</div>
+</div>
+
+<div class="posts">
+{{post_cards}}
+</div>

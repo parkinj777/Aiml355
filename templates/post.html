@@ -1,5 +1,16 @@
-<article>
-<h2>{{title}}</h2>
-<p class="post-date"><time datetime="{{date}}">{{date_display}}</time></p>
+<article class="article">
+  <div class="kicker">
+    <span>Notes</span>
+    <span>Entry {{entry_num}}</span>
+    <span>{{read_time}} read</span>
+  </div>
+  <h1>{{title}}<em>.</em></h1>
+  {{lede_block}}
+  <div class="article-body">
 {{content}}
+  </div>
+  <div class="signoff">
+    <span>End of entry · <time datetime="{{date}}">{{date_display}}</time></span>
+    <a class="back-link" href="{{root_path}}index.html">← Back to index</a>
+  </div>
 </article>
