@@ -1,7 +1,9 @@
-# Aiml355 — a deliberately web 1.0 blog
+# Aiml355 — a hand-built static blog
 
-A minimal static blog. Markdown in, plain HTML out. No JavaScript on the
-site, Georgia body, Verdana headings, blue/purple links.
+A minimal static blog with an editorial-magazine design. Markdown in,
+plain HTML out, no JavaScript on the site. Set in Instrument Serif,
+JetBrains Mono, and Inter, with a paper-grain texture and an orange
+accent.
 
 ## Layout
 
@@ -40,12 +42,14 @@ outputs.
 ---
 title: Post title
 date: 2026-05-16
-description: Optional one-liner for <meta name="description">.
+description: Optional one-liner — used for <meta name="description">, the index-card excerpt, and the post lede.
+category: Notes   # optional, defaults to "Notes"; shown on the index card
 ---
 ```
 
-The homepage lists posts newest-first by `date`. Each post is rendered
-to `dist/posts/<slug>.html`.
+The homepage lists posts newest-first by `date`, as a grid of cards with
+reading time and word count. Each post is rendered to
+`dist/posts/<slug>.html`.
 
 ## Deploying to Cloudflare Pages
 
