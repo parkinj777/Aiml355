@@ -53,7 +53,7 @@ Connect the repo in the Cloudflare Pages dashboard and set:
 
 - **Build command:** `npm run build`
 - **Build output directory:** `dist`
-- **Node version:** 20 or newer (`NODE_VERSION=20` env var)
+- **Node version:** pinned via `.nvmrc` (currently 22)
 
 `raw-images/` is gitignored — only the resized outputs in `images/`
 are committed and shipped. There is no runtime JavaScript, so the

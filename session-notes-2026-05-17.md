@@ -19,7 +19,7 @@ A deliberately web 1.0 static blog:
     ├── .gitignore             # node_modules/, raw-images/, dist/, .claude/settings.local.json
     ├── .nvmrc                 # Node 20 (pins Cloudflare build container)
     ├── README.md
-    ├── SESSION_NOTES.md       # this file
+    ├── session-notes-2026-05-17.md       # this file
     ├── build.js               # markdown → dist/
     ├── resize-images.js       # raw-images/ → images/
     ├── package.json           # type: module; scripts: build, resize
