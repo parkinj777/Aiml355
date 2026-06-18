@@ -35,10 +35,12 @@
   <div class="foot-cta">
     <h3>Get the next one, <em>quietly</em>.</h3>
     <p>Roughly one note when there's something worth sending. No streaks, no funnel, unsubscribe in one click.</p>
-    <form class="sub" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('input').placeholder='Thanks — see you in your inbox.';">
-      <input type="email" placeholder="you@somewhere.net" required>
-      <button type="submit">Subscribe</button>
-    </form>
+    <!-- Subscribe box is intentionally inert: the site ships no JavaScript (see CLAUDE.md).
+         Wire a real newsletter endpoint or swap in a mailto link when there's a backend. -->
+    <div class="sub">
+      <input type="email" placeholder="you@somewhere.net" aria-label="Email address">
+      <button type="button">Subscribe</button>
+    </div>
   </div>
   <div class="foot-col">
     <h4>Elsewhere</h4>
